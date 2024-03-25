@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+:root{
+  --color__header:rgba(2, 2, 28, 0.7);
+  --color__pry:rgb(2, 2, 28);
+  --header:4rem;
+  --font__pry:rgb(216, 216, 216);
+  --color__acent: #B535F6;
+  --color__start:yellow;
+  --font__title: 'Rubik Mono One', monospace;
+  --font__norm:'Comfortaa', sans-serif;
+  
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+body{
+  background: #02021c;
+}
+.title{
+  text-align: center;
+  font-size: 3rem;
+}
+p{
+  font-family: 'Comfortaa', sans-serif;
+  color: var(--font__pry);
+}
+h1,h5{
+  font-family: 'Rubik Mono One', monospace;
+}
+
+/*---------------------------------------- Header----------------------------------------*/
+
+.menu-custom{
+  background-color:transparent;
+  background-color:var(--color__header) ;
+  height: var(--header);
+  color: var(--font__pry);
+}
+.navbar-toggler{
+  background-color: rgba(216, 216, 216, 0.7);
+}
+.navbar-collapse{
+  height: var(--header);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+ justify-content: center;
+ 
+}
+.navbar-custom{
+  color: var(--font__pry);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo{
+  width:36px;
+  height:32px;
+  margin-bottom: 1rem;
+}
+.name_site{
+  color: var(--font__pry);
+}
+.nav-link.active{
+  color: var(--color__acent) !important;
+}
+
+.nav-link,
+.nav-item{
+  color: var(--font__pry);
+  font-size: 1rem;
+  font-family: var(--font__norm)
+}
+.nav-item{
+  margin-left: 1rem;
+}
+
+/*---------------------------------------- buscador---------------------------------------- */
+.form-control{
+  background: var(--color__header);
+  border: solid 1px var(--color__acent);
+}
+.input{
+  background: var(--color__pry);
+  border: solid 1px var(--color__acent);
+}
+.form-control:focus{
+  background: var(--color__pry);
+  color: var(--font__pry);
+}
+.form-control::placeholder{
+  color:var(--font__pry);
+  font-family: var(--font__norm);
+}
+.lupa{
+  color: var(--color__acent);
+}
+.btn-outline-success{
+  background-color: var(--color__acent);
+  border: solid 1px var(--color__pry);
+  color: var(--color__pry);
+  font-weight: 600;
+  width: 150px;
+  font-family: var(--font__norm);
+}
+.btn-outline-success:hover{
+  background-color:var(--color__pry);
+  color: var(--font__pry);
+  border:1px solid var(--color__acent);
+}
+.d-flex{
+  margin-top: 1rem;
+}
+
+/*---------------------------------------- Carrusel---------------------------------------- */
+
+.movie-container {
+  position: relative;
+  height: 100vh; /* Ajusta esto según tus necesidades */
+}
+
+.movie-image {
+  width: 100vw; /* Ajusta esto según tus necesidades */
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(2, 2, 28,1) 70%);
+  filter: blur(20%);
+  z-index: 1;
+}
+
+
+.movie-title {
+  font-family: 'Rubik Mono One', monospace;
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  padding: 10px;
+  z-index: 3;
+  margin-left: 1rem;
+}
+.movie-title  >h1{
+  text-align: left;
+}
+.title {
+  color:var(--font__pry);
+  text-align: left;
+  font-size: 2rem; /* Ajusta esto según tus necesidades */
+}
+.carousel-control-prev-icon{
+  color:var(--color__pry);
+}
+
+/*RenderStart*/
+.start,
+.starHalf{
+  font-size: 20px;
+  color:var(--color__start);
+}
+
+/*Peliculas grid*/
+.moviesGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+}
+
+
+/*Spinner*/
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinning{
+  animation: spin 1s infinite;
+}
+@keyframes spin{
+  to{
+      transform:rotate(360deg);
+  }
+}
+/*Peliculas Card*/
+.card{
+  background: rgb(2, 2, 28);
+  border-radius: 15px;
+}
+.card:hover{
+  box-shadow: rgba(212, 212, 237, 0.25) 0px 50px 100px -20px, rgba(189, 183, 183, 0.3) 0px 30px 60px -30px, rgba(76, 118, 159, 0.35) 0px -2px 6px 0px inset;
+}
+.container_card{
+  list-style: none;
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+}
+.overlay_peliculas{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  height:200px;
+  border-bottom-left-radius: 15px 15px;
+  border-bottom-right-radius: 15px 15px;
+  background-image: linear-gradient(180deg, rgba(255,0,0,0), rgba(2, 2, 28,1) 70%);
+  filter: blur(50%);
+}
+.card__title{
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  z-index: 1;
+  text-align: center;
+  color: var(--color__pry);
+}
+a{
+  text-decoration: none;
+}
+.card-img-top {
+  width: 100%; 
+  height: auto;
+  border-top-left-radius: 15px 15px;
+  border-top-right-radius: 15px 15px;
+}
+@media(max-width: 560px){
+  .moviesGrid{
+      grid-template-columns: 100%;
+  }
+  .navbar-collapse {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 30vh; /* Ocupa toda la altura de la pantalla */
+   background: var(--color__header);
+  }
+}
